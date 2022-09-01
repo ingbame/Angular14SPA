@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-to-do-add',
@@ -8,7 +9,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 export class ToDoAddComponent implements OnInit,OnChanges {
 @Input() list: any[] = [];
 newTask: any = {};
-  constructor() { }
+  constructor(private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,8 @@ newTask: any = {};
       return;
     this.list.push(this.newTask);
     this.newTask = {};
+
+    this.toastr.success("ToDoApp","Nueva tarea agregada.");
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("ToDoAddComponent - OnChanges");
