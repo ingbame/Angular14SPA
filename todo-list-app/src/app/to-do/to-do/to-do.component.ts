@@ -35,8 +35,8 @@ export class ToDoComponent implements OnInit, OnChanges,DoCheck,AfterContentInit
   }
   ngOnInit(): void {
     console.log("ToDoComponent - OnInit");
-    this.list.push({id: 1, name:"Limpiar habitación"});
-    this.list.push({id: 2, name:"Lectura diaria"});
+    this.list.push({id: 1, name:"Limpiar habitación", default: true});
+    this.list.push({id: 2, name:"Lectura diaria", default: true});
     this.list.push({id: 3, name:"Ver youtube"});
   }
 
