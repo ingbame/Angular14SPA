@@ -7,7 +7,6 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   //encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ToDoComponent implements OnInit, OnChanges,DoCheck,AfterContentInit,AfterContentChecked,AfterViewInit,AfterViewChecked, OnDestroy {
-
   constructor() { }
 
   list: any[] = [];

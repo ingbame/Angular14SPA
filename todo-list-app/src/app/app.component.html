@@ -33,8 +33,10 @@
 <div class="content" role="main">
 
   <app-title [title]="title"></app-title>
-
-<app-to-do></app-to-do>
+  <div strle="border: 1px solid blue;">
+    <router-outlet></router-outlet>
+  </div>
+<!-- <app-to-do></app-to-do> -->
 
   <!-- Footer -->
   <footer>
@@ -65,4 +67,4 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
+

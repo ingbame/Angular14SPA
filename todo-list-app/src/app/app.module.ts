@@ -9,6 +9,10 @@ import { TitleComponent } from './title/title.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AuthModule } from './auth/auth.module';
+import { HomeModule } from './home/home.module';
+import { UsersComponent } from './users/users/users.component';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut:2000
-    }) // ToastrModule added
+    }), // ToastrModule added
+    AuthModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

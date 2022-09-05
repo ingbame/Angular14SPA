@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { ToDoAddComponent } from './to-do-add/to-do-add.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
+import { DirectivesModule } from '../directives/directives.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +19,8 @@ import { ToDoItemComponent } from './to-do-item/to-do-item.component';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    DirectivesModule
   ],
   exports:[ToDoComponent]
 })
