@@ -7,21 +7,26 @@ import { UsersDetailsComponent } from './users/users-details/users-details.compo
 import { UsersComponent } from './users/users/users.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "login", pathMatch: "full" },
-  { path: "login", component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   {
-    path: "home",
+    path: 'home',
     component: HomeComponent,
     children: [
-      { path: "to-do", component: ToDoComponent },
+      { path: 'to-do', component: ToDoComponent },
+      // {
+      //   path: 'users', component: UsersComponent,
+      //   children: [
+      //     { path: ':id', component: UsersDetailsComponent }
+      //   ]
+      // }
       {
-        path: "users", component: UsersComponent,
-        children: [
-          { path: "users-details", component: UsersDetailsComponent }
-        ]
+        path:'users',
+        loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
       }
     ]
   }
+
 ];
 
 @NgModule({

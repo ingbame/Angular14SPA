@@ -11,7 +11,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  Ingresar(): void {
+
+  login(): void {
 
   }
+
 }

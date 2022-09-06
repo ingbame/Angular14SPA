@@ -6,21 +6,32 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './to-do-item.component.html',
   styleUrls: ['./to-do-item.component.scss']
 })
-export class ToDoItemComponent implements OnInit,OnDestroy {
-  @Input() list: any[] = [];
-@Input() item: any = {};
-  constructor(private toastr: ToastrService) { }
+export class ToDoItemComponent implements OnInit, OnDestroy {
+
+  @Input()
+  item: any;
+
+  @Input()
+  list: any[] = [];
+
+  constructor(private toastrSevice: ToastrService) { }
+  ngOnDestroy(): void {
+    console.log('ToDoItemComponent - OnDestroy');
+  }
+
   ngOnInit(): void {
   }
-  ngOnDestroy(): void {
-    console.log("ToDoItemComponent - OnDestroy");
-  }
 
-  delete(item:any):void{
+  delete(item: any): void {
     let index = this.list.findIndex(x => x.name == item.name);
+
+    console.log('index', index);
+
+    // delete this.list[index];
     this.list.splice(index,1);
 
-    this.toastr.warning("ToDoApp","Tarea eliminada.");
+    this.toastrSevice.success('ToDo App','Tarea eliminada!');
+
   }
 
 }

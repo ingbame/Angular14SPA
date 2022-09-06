@@ -13,8 +13,10 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  exports:[
-    HomeComponent
-  ]
+  exports:[HomeComponent]
 })
-export class HomeModule { }
+export class HomeModule {
+  constructor(){
+    console.log('HomeModule')
+  }
+}

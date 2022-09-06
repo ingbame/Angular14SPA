@@ -1,8 +1,7 @@
-.task-item{
-  display:flex;
-  gap: 10px;
+.task-item {
+  border: 1px solid greenyellow;
 }
 
-.task-item-df{
-  background-color: red;
+.task-item-default {
+  background-color: aqua;
 }

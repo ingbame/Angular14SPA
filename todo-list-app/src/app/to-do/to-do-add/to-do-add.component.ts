@@ -6,23 +6,26 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './to-do-add.component.html',
   styleUrls: ['./to-do-add.component.scss']
 })
-export class ToDoAddComponent implements OnInit,OnChanges {
-@Input() list: any[] = [];
-newTask: any = {};
-  constructor(private toastr: ToastrService) { }
+export class ToDoAddComponent implements OnInit, OnChanges {
+
+  newTask: any = {name: 'new task'};
+  @Input() list: any[] = [];
+
+  constructor(private toastrSevice: ToastrService) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('ToDoAddComponent - OnChanges');
+  }
 
   ngOnInit(): void {
   }
-  add():void{
-    if(!this.newTask.name)
+
+  add(): void {
+    if (!this.newTask.name)
       return;
     this.list.push(this.newTask);
     this.newTask = {};
 
-    this.toastr.success("ToDoApp","Nueva tarea agregada.");
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log("ToDoAddComponent - OnChanges");
+    this.toastrSevice.success('ToDo App','Nueva tarea agregada!');
   }
 
 }

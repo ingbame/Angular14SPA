@@ -4,17 +4,17 @@ import { ToDoComponent } from './to-do/to-do.component';
 import { FormsModule } from '@angular/forms';
 import { ToDoAddComponent } from './to-do-add/to-do-add.component';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
+import { ToDoAdd2Component } from './to-do-add2/to-do-add2.component';
 import { ToDoItemComponent } from './to-do-item/to-do-item.component';
+import { AppModule } from '../app.module';
 import { DirectivesModule } from '../directives/directives.module';
-import { RouterModule } from '@angular/router';
-
-
 
 @NgModule({
   declarations: [
     ToDoComponent,
     ToDoAddComponent,
     ToDoListComponent,
+    ToDoAdd2Component,
     ToDoItemComponent
   ],
   imports: [
@@ -24,4 +24,8 @@ import { RouterModule } from '@angular/router';
   ],
   exports:[ToDoComponent]
 })
-export class ToDoModule { }
+export class ToDoModule {
+  constructor(){
+    console.log('ToDoModule')
+  }
+ }

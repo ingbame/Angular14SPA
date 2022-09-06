@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -7,11 +8,13 @@ import { User } from 'src/app/models/user';
   styleUrls: ['./users-details.component.scss']
 })
 export class UsersDetailsComponent implements OnInit {
-  users: User[] = [];
-  constructor() { }
+
+  id: number = 0
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.users.push({id:1,name:"Baruch"});
+    this.activatedRoute.paramMap.subscribe(res => this.id = parseInt(res.get('id')!.toString()))
+
   }
 
 }

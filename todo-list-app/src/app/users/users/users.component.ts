@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  users: User[] = [];
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.users.push({ id: 1, name: 'Alfredo' });
+    this.users.push({ id: 2, name: 'Carlos' });
+  }
+
+  edit(user: User): void {
+    this.router.navigate([`/home/users/${user.id}`]);
   }
 
 }

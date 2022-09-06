@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToDoModule } from './to-do/to-do.module';
 import { TitleComponent } from './title/title.component';
-
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { DirectivesModule } from './directives/directives.module';
 import { AuthModule } from './auth/auth.module';
 import { HomeModule } from './home/home.module';
-import { UsersComponent } from './users/users/users.component';
 import { UsersModule } from './users/users.module';
+
 
 @NgModule({
   declarations: [
@@ -21,14 +21,14 @@ import { UsersModule } from './users/users.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ToDoModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot({
-      timeOut:2000
-    }), // ToastrModule added
     AuthModule,
-    HomeModule
+    HomeModule,
+    ToastrModule.forRoot({
+      timeOut: 2000
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
